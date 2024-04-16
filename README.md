@@ -11,6 +11,13 @@ Built with the following tools
 - Material UI
 - TypeScript
 
+## Setup 
+
+To carry out a setup of the project please use the following command
+
+### `npm install`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
