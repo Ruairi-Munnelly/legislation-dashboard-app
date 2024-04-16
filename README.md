@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a basic legislation search app that is created to match said requested features of the code challenge received from propylon.
+This is a basic legislation search app that is created to match said requested features of the code challenge received from Propylon.
 
 Built with the following tools
 
