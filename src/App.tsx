@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { nanoid } from "@reduxjs/toolkit";
+import DashboardTable from "./components/Dashboard/DashboardTable";
+import BillModal from "./components/BillModal/BillModal";
+import TabsComponent from "./components/Tabs/TabsComponentDynamic";
+import { useSelector } from "react-redux";
+import {
+  getFavourites,
+  legislationData,
+} from "./components/Dashboard/DashboardSlice";
 
 function App() {
+  const legislationStateData: object[] = useSelector(legislationData);
+  const favouriteData: object[] = useSelector(getFavourites);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <img
+          className='header-logo'
+          src='/legislation-logo.svg'
+          alt='dashboard-logo'
+        />
       </header>
+      <main>
+        <TabsComponent
+          tabTitles={["Legislation", "Favourites"]}
+          tabContent={[
+            <DashboardTable
+              key={nanoid()}
+              title={"Legislation Dashboard"}
+              data={legislationStateData}
+            />,
+            <DashboardTable
+              key={nanoid()}
+              title={"Favourites"}
+              data={favouriteData}
+            />,
+          ]}
+        />
+        <BillModal />
+      </main>
     </div>
   );
 }

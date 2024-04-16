@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a basic legislation search app that is created to match said requested features of the code challenge received from propylon.
+
+Built with the following tools
+
+- React
+- Redux
+- Material UI
+- TypeScript
+
 ## Available Scripts
 
 In the project directory, you can run:
